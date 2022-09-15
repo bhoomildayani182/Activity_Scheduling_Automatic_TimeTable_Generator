@@ -6,8 +6,7 @@
 
 ## instances:
 
-            Data Structure which stores info about provided slots to be organized.
-            i.e
+            Data Structure which stores info about provided slots to be organized i.e
             [[Ti, Ci, Si, LTi, Li],......,[Tn, Cn, Sn, LTn, Ln]]
             Here
                 T = Teacher
@@ -32,10 +31,6 @@
             Data structure which stores info about Teachers i.e
             ["T1", "T2"]
 
-# Output
-
-    From this program there are two outputs possible. One is a time table generated without clashes and successfully returned from the function. This time table will satisfy our Hard constraints. Second output is an error which will tell us that there are clashes in the time table and it can not be generated. User can try again on this sort of error or simply change the input values.
-
 # Variables used in the algorithm
 
 - sectionInstances: data structure to store info about each section
@@ -55,41 +50,53 @@
 ## Generate-Time-Table(instances, givenSlots, classes, teachers){
 
 ```
-    let i, j, k, numOfDays = 0
-    for (i = 1 to givenSlots.length){
-        if givenSlots[i] > 0
-        add 1 to numOfDays
+    givenSlots = m
+    noOfDays = d
+    classes = c
+    noOfnstances = n
+
+
+    let i, j, k
+    let numOfDays = 0 ---------------------->  1
+    for (i = 1 to givenSlots.length){----------------------> d+1
+        if givenSlots[i] > 0----------------------> d
+        add 1 to numOfDays ----------------------> d
     }
 
     initialize teachers, classes data structure upto number of given slots
 
-    for i in classes
-    	for j in instances
-    		for k in instances[j].classes
-    			if(instances[j].classes[k] == classes[i])
-    				instances[j][ins] = []
-    				add instances[j] to secInstances at classes[i]
-    regenerateCountSec = 0
-    regenerateFlagSec =false
-    regenerateListSec = []
-    notPossibleCount = 0
-    impossible = false
+    for i in classes   ---------------------->  c+1
+    	for j in instances   ---------------------->  nc + c
+    		for k in instances[j].classes----------------------> (n)(c)+nc
+    			if(instances[j].classes[k] == classes[i]) ----------------------> nc
+    				instances[j][ins] = []  ---------------------->nc
+    				add instances[j] to secInstances at classes[i]  ----------------------> nc
+    regenerateCountSec = 0    ---------------------->  1
+    regenerateFlagSec =false   ----------------------> 1
+    regenerateListSec = []   ----------------------> 1
+    notPossibleCount = 0    ---------------------->   1
+    impossible = false      ---------------------->  1
 
-    for i in classes
-    	if impossible flag is true then return "Table not possible"  & break
-    	 notPossible = false
-    	 currentTT = [][]
-    	 regenerateCountSI = 0
-    	 regenerateFlagSI = false
-    	 regenerateListSI = []
+    for i in classes   ---------------------->c+1
+    	if impossible flag is true then return "Table not possible"  & break  ----------------------> c+c+c
+    	 notPossible = false    ----------------------> c
+    	 currentTT = [][]    ---------------------->   c
+    	 regenerateCountSI = 0   ---------------------->   c
+    	 regenerateFlagSI = false    ---------------------->   c
+    	 regenerateListSI = []   ----------------------> c
 
-    	for j in secInstances[classes[i]]
-    		availableSlots = []
+    	for j in secInstances[classes[i]]  ----------------------> cc+c
+    		availableSlots = []  ---------------------->  cc
 
-    		for day in givenSlots
-    			let declare an empty data structure daySlots
-    			for slot in givenSlots[day]
-    				if regenerateFlagSI is true then make slot flag true
+    		for day in givenSlots  ----------------------> dcc+cc
+    			let declare an empty data structure daySlots  ----------------------> dcc
+    			for slot in givenSlots[day] ----------------------> dcc*m + dcc
+
+
+                  As we know the probability of the running of this code block is very low because it only run when need to generate whole timetable from the start. So using Probabilistic analysis we found out that running time of inner code is assumed 1 using probabilistic analysis So we will not need to calculate the running cost of each line in this block.
+
+
+    				if regenerateFlagSI is true then make slot flag true  ----------------------> dccm * 1
     					for a in regenerateListSI.slot
     						make dumFlag false
     						for b in slot
@@ -109,12 +116,18 @@
                             then make regenerateFlagSec  false
     				elseif((teacherTT[secInstances[classes[i]][j].teacher][day][slot] == 0) && (currentTT[day][slot] == 0))
                         add slot to daySlots and then add daySlots to availableSlots;
-            eachDay = secInstances[classes[i]][j].numLectures / numDays
-            extraDays = secInstances[classes[i]][j].numLectures % numDays
-            for i in range(numDays)
-    			if there exits an extra day then add eachDay and plus 1 day to count and decrement extraDays by 1 & repeat else make count equal to each day
-                flag = true , radCount = 0
-    			while(flag)
+            eachDay = secInstances[classes[i]][j].numLectures / numDays ----------------------> cc
+            extraDays = secInstances[classes[i]][j].numLectures % numDays  ----------------------> cc
+            for i in range(numDays)  ----------------------> dcc+cc
+    			if there exits an extra day then add eachDay and plus 1 day to count and decrement extraDays by 1 & repeat ----------------------> dcc+dcc+dcc
+                else make count equal to each day ----------------------> dcc
+                flag = true , radCount = 0    ----------------------> dcc+dcc
+
+
+               As we know the probability of the running of the three nested loops inside the while is very low, So using Probabilistic analysis we found out that running time of while loop will be 1 as the probability is relatively very higher that loop will only execute in each iteration of outer for loop.
+
+
+    			while(flag)  ----------------------> dcc * 1
     				const buffer = ranD(availableSlots, count)
     			    if((buffer != undefined) && (buffer != null) && (buffer.day != undefined) && (buffer.slot!= undefined) &&  (buffer.day >= 0) && (buffer.day < givenSlots.length) && (buffer.slot.length == count))
                         secInstances[classes[i]][j].push(buffer.day,ret.slot)
@@ -156,14 +169,14 @@
     								instances[v]["mapp"] = []
                                     secInstances[classes[u]].push(instances[v])
     							else make impossible to true and flag to false
-                if(impossible ||  notPossible || regenerateFlagSec || regenerateFlagSI) then break
-            if( impossible ||  notPossible || regenerateFlagSec) then break
-    	if( (!impossible) && (!regenerateFlagSec) && (!notPossible))
-            add currentTT to TT
-            secTT[classes[i]] = currentTT
-    	if notPossible is true then make it false
-    	if impossible is true then return("Could not generate in this case, please refresh/restart")
-    return TT
+                if(impossible ||  notPossible || regenerateFlagSec || regenerateFlagSI) then break----------------------> dcc+dcc
+            if( impossible ||  notPossible || regenerateFlagSec) then break ---------------------->cc+cc
+    	if( (!impossible) && (!regenerateFlagSec) && (!notPossible))  ----------------------> c
+            add currentTT to TT ---------------------->  c
+            secTT[classes[i]] = currentTT ---------------------->  c
+    	if notPossible is true then make it false   ---------------------->  c+c
+    	if impossible is true then return("Could not generate in this case, please refresh/restart") ----------------------> c+c
+    return TT    ---------------------->   1
 ```
 
 }
@@ -171,23 +184,37 @@
 ## ranD (slots, count) {
 
 ```
-    let i, viableDays, slot
-    for i in slots
-    	if slots[i].length >= count
-    		add i in viable days
-    if viableDays is empty then return null
-    let buff = crypto.randomBytes(2);
-    let n = parseInt(buff.toString('hex'),16)
-    let index = n % (viableDays.length);
-    let day = viableDays[index]
-    for i = 0 to count {
-    	buff = crypto.randomBytes(2);
-    	n = parseInt(buff.toString('hex'),16)
-    	let s = n % slots[day].length;
-    	slot.push(slots[day][s]);
-    	slots[day].splice(s,1);
-    	return day, slot
+    let i, viableDays, slot ----------------------> 1+1+1
+    for i in slots  ----------------------> d+1
+    	if slots[i].length >= count  ----------------------> d
+    		add i in viable days  ----------------------> d
+    if viableDays is empty then return null  ----------------------> 1+1
+    let buff = crypto.randomBytes(2);  ----------------------> 1
+    let n = parseInt(buff.toString('hex'),16)  ----------------------> 1
+    let index = n % (viableDays.length);   ---------------------->  1
+    let day = viableDays[index]    ----------------------> 1
+    for i = 0 to count {    ---------------------->  d+1
+    	buff = crypto.randomBytes(2);   ----------------------> d
+    	n = parseInt(buff.toString('hex'),16)  ---------------------->  d
+    	let s = n % slots[day].length;  ----------------------> d
+    	slot.push(slots[day][s]);  ----------------------> d
+    	slots[day].splice(s,1);  ----------------------> d
     }
+    return day, slot  ----------------------> 1
 ```
 
 }
+
+## Time Complexity Calculations
+
+In the above block we have calculated the running costs for each line and now we will sum all the costs for every line to find the total complexity of algorithm.
+
+1 + d+1 + d + d c+1 nc+c + (n)(c)+nc + nc + nc + nc + 1 + 1 + 1 + c+1 + c+c+c + c + c + c + c + c + cc+c + cc + dcc+cc + dcc + dccm+dcc + dccm + cc + cc + dcc+cc + dcc + dcc+dcc + dcc + dcc+dcc + cc+cc + c + c + c c+c + c+c +
+1+1+1 + d+1 + d + d + 1+1 + 1 + 1 + 1 + 1 + d+1 + d + d + d + d + d + 1
+
+After further simplifying these numbers, we have
+
+2d(c^2)m + 10d(c^2) + 6nc + 7(c^2) + 19c + 12d + 19
+
+
+

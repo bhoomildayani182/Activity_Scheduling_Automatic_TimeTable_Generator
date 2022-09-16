@@ -1,5 +1,4 @@
-# TiemTable_Generator
-
+# Scheduly
   An automated Time-Table Generator.
 
 ## Contributors

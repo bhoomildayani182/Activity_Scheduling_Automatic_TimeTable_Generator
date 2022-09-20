@@ -2,11 +2,9 @@
   An automated Time-Table Generator.
 
 ## Contributors
-- [Ghulam Ghous](https://github.com/ghulamghousdev)
-- [Ahmad Zaheer](https://github.com/ahmadzaheer-dev)
-
-## Project Instructor
-- [Prof. Samyan Wahla](https://github.com/samyanuet)
+- [Bhoomil Dayani](https://github.com/bhoomildayani182)
+- [Raj Busa](https://github.com/RajBusa)
+- [Divyesh Butani](https://github.com/20it012)
 
 ## Concept
   The goal of the software application is to provide a possible timetable solution with the
@@ -37,4 +35,4 @@
 - Express.js
 
 ## Found an Issue or any suggestions
-Make an issue [here](https://github.com/ghulamghousdev/CS311S20PID32/issues/new).
+Make an issue [here](https://github.com/bhoomildayani182/TiemTable_Generator/issues/new).

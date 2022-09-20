@@ -33,4 +33,4 @@
 - Express.js
 
 ## Found an Issue or any suggestions
-Make an issue [here](https://github.com/bhoomildayani182/CS311S20PID32/issues/new).
+Make an issue [here](https://github.com/bhoomildayani182/TiemTable_Generator/issues/new).

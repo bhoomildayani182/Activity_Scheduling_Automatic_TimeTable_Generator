@@ -3,7 +3,6 @@
 
 ## Contributors
 - [Bhoomil Dayani](https://github.com/bhoomildayani182)
-<<<<<<< HEAD
 - [Raj Busa](https://github.com/RajBusa)
 - [Divyesh Butani](https://github.com/20it012)
 

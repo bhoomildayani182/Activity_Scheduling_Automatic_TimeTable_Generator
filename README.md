@@ -6,8 +6,6 @@
 <<<<<<< HEAD
 - [Raj Busa](https://github.com/RajBusa)
 - [Divyesh Butani](https://github.com/20it012)
-=======
->>>>>>> d7af8f2eb002b521b898c45da89f574072e59e5b
 
 ## Concept
   The goal of the software application is to provide a possible timetable solution with the

@@ -2,11 +2,7 @@
   An automated Time-Table Generator.
 
 ## Contributors
-- [Ghulam Ghous](https://github.com/ghulamghousdev)
-- [Ahmad Zaheer](https://github.com/ahmadzaheer-dev)
-
-## Project Instructor
-- [Prof. Samyan Wahla](https://github.com/samyanuet)
+- [Bhoomil Dayani](https://github.com/bhoomildayani182)
 
 ## Concept
   The goal of the software application is to provide a possible timetable solution with the

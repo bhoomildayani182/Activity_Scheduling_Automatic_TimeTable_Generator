@@ -1,9 +1,8 @@
 import React from "react";
 import {BrowserRouter, Route, Switch, Link, NavLink, useParams, useRouteMatch} from "react-router-dom";
-import AddClass from "./AddClass";
-import AddSubject from "./AddSubject";
-import AddTeacher from "./AddTeacher";
-import ClassList from './ClassList';
+import AddClass from "./addClass";
+import AddSubject from "./addSubject";
+import AddTeacher from "./addTeacher";
 import "../styles/dashboard.scss";
 import Logo from "../logo.svg";
 
@@ -61,9 +60,6 @@ function Dashboard(){
                         </Route>
                         <Route path={`${url}/teachers/add`}>
                             <AddTeacher />
-                        </Route>
-                        <Route path={`${url}/classes/view`}>
-                            <ClassList className="N-7" session="2018" section="A" />
                         </Route>
                     </Switch>
                 </div>

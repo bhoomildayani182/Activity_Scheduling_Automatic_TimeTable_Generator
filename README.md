@@ -34,5 +34,34 @@
 - Node.js
 - Express.js
 
+## Project Configuration
+
+### IDE
+
+| Sr. No. |     Technology     | Version |
+| :------ | :----------------: | :-----: |
+| 1.      | Visual Studio Code |  1.47   |
+
+### Database and GUI for Database
+
+| Sr. No. | Technology | Version |
+| :------ | :--------: | :-----: |
+| 1.      |  MongoDB   |   3.6   |
+| 2.      |  Robo 3T   |   1.3   |
+
+### Programming Language and NPM Packages
+
+| Sr. No. |  Technology  | Version |
+| :------ | :----------: | :-----: |
+| 1.      |   React.js   | 16.13.1 |
+| 2.      |   Node.js    | 12.6.0  |
+| 3.      |  Node-SAAS   | 4.14.1  |
+| 4.      |   Nodemon    |  2.0.4  |
+| 5.      |  Express.js  |  4.17   |
+| 6.      |   Mongoose   | 5.9.27  |
+| 7.      |   bcryptjs   |  2.4.3  |
+| 8.      | jsonwebtoken |  8.5.1  |
+
+
 ## Found an Issue or any suggestions
 Make an issue [here](https://github.com/bhoomildayani182/TiemTable_Generator/issues/new).

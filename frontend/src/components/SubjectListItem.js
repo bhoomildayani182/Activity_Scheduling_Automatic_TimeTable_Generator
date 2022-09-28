@@ -4,15 +4,14 @@ import "../styles/subjectlistitem.scss";
 function SubjectListItem(props) {
   const handleRemoveSubject = () => {
     //Calling the handler function passed through the props
-    props.remove(props.subjectCode);
+    props.remove(props.itemId);
   };
 
   return (
     <div className="subject">
       <p className="subject__details">
         {props.subjectCode}-{props.subjectName} | Credit Hours:{" "}
-        {props.creditHours} | Contact Hours: {props.contactHours} | Labs:{" "}
-        {props.labs}
+        {props.creditHours} | Contact Hours: {props.contactHours}
       </p>
       <button
         onClick={handleRemoveSubject}

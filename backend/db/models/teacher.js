@@ -26,7 +26,7 @@ const teacherSchema = mongoose.Schema({
 
   //Defining the working hours property on teacher Schema
   workingHours: {
-    type: String,
+    type: Number,
     required: true,
     trim: true,
     validate(value) {
@@ -38,12 +38,7 @@ const teacherSchema = mongoose.Schema({
       }
     },
   },
-  //Defining the subjectName property on teacher Schema
-  subjectName: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  
   //DEFINING A FOREIGN RELATIONSHIP WITH USER
   author: {
     type: mongoose.Schema.Types.ObjectId,
@@ -51,12 +46,6 @@ const teacherSchema = mongoose.Schema({
     ref: "User",
   },
 
-  //DEFINING A FOREIGN RELATIONSHIP WITH SUBJECT
-  author: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "Subjects",
-  },
 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);

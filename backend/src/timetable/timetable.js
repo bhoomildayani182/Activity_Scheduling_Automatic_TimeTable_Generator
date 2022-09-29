@@ -110,7 +110,10 @@ const generateTimeTable = async (
     let regenerateFlagSI = false;
     let regenerateListSI = {};
     for (j = 0; j < secInstances[sections[i]].length; j++) {
+<<<<<<< Updated upstream
       a++;
+=======
+>>>>>>> Stashed changes
       let availSlots = [];
       for (day = 0; day < givenSlots.length; day++) {
         //In this case number length of slots will b equal to number of days
@@ -234,7 +237,6 @@ const generateTimeTable = async (
               }
               for (let y in secInstances[sections[i]][j].mapp) {
                 for (let w in secInstances[sections[i]][j].mapp.slot) {
-                  b++;
                   inProcessTimeTable[secInstances[sections[i]][j].mapp[y].day][
                     secInstances[sections[i]][j].mapp[y].slot[w]
                   ] = 0;
@@ -247,7 +249,10 @@ const generateTimeTable = async (
               j--;
             } else {
               if (regenerateCountSec < 100) {
+<<<<<<< Updated upstream
                 b++;
+=======
+>>>>>>> Stashed changes
                 regenerateCountSI = 0;
                 regenerateSec = true;
                 regenerateCountSec++;
@@ -261,7 +266,6 @@ const generateTimeTable = async (
                 for (let x in secInstances[sections[i]]) {
                   for (let y in secInstances[sections[i]][x].mapp) {
                     for (let w in secInstances[sections[i]][x].mapp.slot) {
-                      b++;
                       teacherTimeTable[secInstances[sections[i]][x].teacher][
                         secInstances[sections[i]][x].mapp[y].day
                       ][secInstances[sections[i]][x].mapp[y].slot[w]] = 0;
@@ -309,7 +313,6 @@ const generateTimeTable = async (
                   for (let u in sections) {
                     for (let v in slotSubjTeacInstance) {
                       for (let w in slotSubjTeacInstance[v].sections) {
-                        c++;
                         if (
                           slotSubjTeacInstance[v].sections[w] == sections[u]
                         ) {
@@ -357,6 +360,10 @@ const generateTimeTable = async (
       break;
     }
   }
+<<<<<<< Updated upstream
+=======
+  console.log(timeTable[0]);
+>>>>>>> Stashed changes
   return timeTable;
 };
 

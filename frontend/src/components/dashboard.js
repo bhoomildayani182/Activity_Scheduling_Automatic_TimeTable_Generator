@@ -3,9 +3,7 @@ import {
   BrowserRouter,
   Route,
   Switch,
-  Link,
   NavLink,
-  useParams,
   useRouteMatch,
 } from "react-router-dom";
 import axios from "axios"
@@ -37,23 +35,19 @@ function Dashboard(props) {
         }
       }
       const body = JSON.stringify({});
-      const res = await axios.post('/api/user/logout',body, config);
+      const res = await axios.post('http://localhost:3000/api/user/logout',body, config);
       console.log(res);
       if(res.status === 200){
         auth.removeAuthToken(authToken);
-        window.location.href = '/user';
+        window.location.href = '/';
       }
       
     } catch(err){
+      console.log(err);
     }
 
   }
   
-  const handleHomeRedirect = ()=>{
-    console.log("hello World");
-    window.location.href= '/';
-  }
-
   return (
     <BrowserRouter>
       <div className="dashboard row-2-1-5">
@@ -169,9 +163,6 @@ function Dashboard(props) {
         <div className="right-container">
           <div className="secondary-menubar">
             <ul className="secondary-menu">
-              <li>
-                <button onClick={handleHomeRedirect} className="secondary-menu__link">Home</button>
-              </li>
               <li>
                 <button onClick={handleLogout} className="secondary-menu__btn">Logout</button>
               </li>

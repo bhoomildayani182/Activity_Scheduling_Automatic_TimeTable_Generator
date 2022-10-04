@@ -27,7 +27,7 @@ class TeacherList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.get('/api/teacher', config);
+      const res = await axios.get('http://localhost:3000/api/teacher', config);
       this.setState((prevState, props)=>{
         return ({
           teachers: prevState.teachers.concat(res.data)
@@ -50,7 +50,7 @@ class TeacherList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.delete(`/api/teacher/${itemId}`, config);
+      const res = await axios.delete(`http://localhost:3000/api/teacher/${itemId}`, config);
       console.log(res.status);
     } catch(err){
       console.log(err);

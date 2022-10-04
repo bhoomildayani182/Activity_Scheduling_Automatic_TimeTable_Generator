@@ -1,14 +1,12 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Link, NavLink } from "react-router-dom";
+import { BrowserRouter, Route, Switch} from "react-router-dom";
 import UserCredentials from "./User";
 import Dashboard from "./Dashboard";
 import HomePage from "./HomePage";
+import Footer from "./Footer";
+import PrivateRoute from './PrivateRoute';
 
 class App extends React.Component {
-  constructor(){
-    super();
-  }
-
   render(){
     return (
       <BrowserRouter>
@@ -16,13 +14,14 @@ class App extends React.Component {
           <Route path="/user">
             <UserCredentials />
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard/>
-          </Route>
+          </PrivateRoute>
           <Route path="/">
             <HomePage />
           </Route>
         </Switch>
+        {/* <Footer /> */}
       </BrowserRouter>
     );
   }

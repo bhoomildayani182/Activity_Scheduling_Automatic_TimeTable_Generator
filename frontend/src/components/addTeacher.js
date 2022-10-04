@@ -55,7 +55,7 @@ class AddTeacher extends React.Component {
         }
       }
       const body = JSON.stringify(teacher);
-      const res = await axios.post('/api/teacher', body, config);
+      const res = await axios.post('http://localhost:3000/api/teacher', body, config);
       console.log(res);
       e.target.elements.firstName.value = '';
       e.target.elements.lastName.value = '';

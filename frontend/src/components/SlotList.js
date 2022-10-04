@@ -26,7 +26,7 @@ class SlotList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.get('/api/slots', config);
+      const res = await axios.get('http://localhost:3000/api/slots', config);
       console.log(res);
       this.setState((prevState, props)=>{
         return ({
@@ -48,7 +48,7 @@ class SlotList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.delete(`/api/slots/${itemId}`, config);
+      const res = await axios.delete(`http://localhost:3000/api/slots/${itemId}`, config);
       console.log(res.status);
       this.setState((prevState) => ({
         slots: prevState.slots.filter((cur) => cur._id !== itemId),

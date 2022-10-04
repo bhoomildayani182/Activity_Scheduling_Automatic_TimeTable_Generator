@@ -35,7 +35,7 @@ class AddSlots extends React.Component {
             }
         }
         const body = JSON.stringify(slotDetails);
-        const res = await axios.post('/api/slot ', body, config);
+        const res = await axios.post('http://localhost:3000/api/slot ', body, config);
         console.log(res.data);
 
         e.target.elements.teacherName.value = '';

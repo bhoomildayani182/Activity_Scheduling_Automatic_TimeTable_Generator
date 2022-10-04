@@ -28,7 +28,7 @@ class SubjectList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.get('/api/subjects', config);
+      const res = await axios.get('http://localhost:3000/api/subjects', config);
       this.setState((prevState, props)=>{
         return ({
           subjects: prevState.subjects.concat(res.data)
@@ -49,7 +49,7 @@ class SubjectList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.delete(`/api/subject/${itemId}`, config);
+      const res = await axios.delete(`http://localhost:3000/api/subject/${itemId}`, config);
       console.log(res.status);
       this.setState((prevState) => ({
         subjects: prevState.subjects.filter(

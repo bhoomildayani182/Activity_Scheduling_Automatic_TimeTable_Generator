@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Subject from "./SubjectListItem";
 import auth from "../utils/auth";
 import "../styles/addform.scss";
 
@@ -34,7 +33,7 @@ class AddSubject extends React.Component {
         }
       }
       const body = JSON.stringify(subject);
-      const res = await axios.post('/api/subject', body, config);
+      const res = await axios.post('http://localhost:3000/api/subject', body, config);
       console.log(res);
 
       e.target.elements.subjectCode.value = '';
@@ -68,7 +67,7 @@ class AddSubject extends React.Component {
           <input
             className="addform__input addform__input--half addform__input--left"
             type="number"
-            placeholder="Credit Hours"
+            placeholder="Credit"
             name="creditHours"
           />
           <input

@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import auth from "../utils/auth";
-import { Table ,TableHead, TableBody, TableRow, TableCell } from '@material-ui/core';
+import { Table , TableBody, TableRow, TableCell } from '@material-ui/core';
 import "../styles/timetable.scss";
 
 
@@ -27,7 +27,7 @@ class TimeTable extends React.Component{
                   Authorization: `Bearer ${authToken}`
               }
             }
-            const res = await axios.get('/api/fetchdata', config);
+            const res = await axios.get('http://localhost:3000/api/fetchdata', config);
             const timetables = [];
             let section = '';
             console.log(res.data);

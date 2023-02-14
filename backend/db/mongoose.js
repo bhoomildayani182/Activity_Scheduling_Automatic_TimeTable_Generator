@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 mongoose
   .connect(
     "mongodb://localhost:27017/TimeTablegenrator",
+    // "mongodb+srv://bhoomildayani182:Bhoomil@9350@cluster0.gv59gph.mongodb.net/?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
   )
   .then(() => {

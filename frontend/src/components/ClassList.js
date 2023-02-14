@@ -1,7 +1,7 @@
 import React from "react";
 import ClassListItem from "./ClassListItem";
 import auth from "../utils/auth";
-import axios from "axios";
+import newaxios from '../newaxios';
 import "../styles/classlist.scss";
 
 class ClassList extends React.Component {
@@ -28,7 +28,7 @@ class ClassList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.get('http://localhost:3000/api/class', config);
+      const res = await newaxios.get('/api/class', config);
       this.setState((prevState, props)=>{
         return ({
           classes: prevState.classes.concat(res.data)
@@ -49,7 +49,7 @@ class ClassList extends React.Component {
             Authorization: `Bearer ${authToken}`
         }
       }
-      const res = await axios.delete(`http://localhost:3000/api/class/${itemId}`, config);
+      const res = await newaxios.delete(`/api/class/${itemId}`, config);
       console.log(res.status);
       this.setState((prevState) => ({
         classes: prevState.classes.filter((cur) => cur._id !== itemId),

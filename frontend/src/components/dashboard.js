@@ -7,10 +7,10 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import newaxios from "../newaxios"
-import AddClass from "./AddClass";
-import AddSubject from "./AddSubject";
-import AddTeacher from "./AddTeacher";
-import AddSlots from "./AddSlots";
+import AddClass from "./addClass";
+import AddSubject from "./addSubject";
+import AddTeacher from "./addTeacher";
+import AddSlots from "./addSlots";
 import ClassList from "./ClassList";
 import SubjectList from "./SubjectList";
 import TeacherList from "./TeacherList";

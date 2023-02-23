@@ -47,6 +47,7 @@ class SignUp extends React.Component {
               const body = JSON.stringify(newUser);
               const res = await newaxios.post('/api/user/signup', newUser, config);
               auth.setAuthToken(res.data.token);
+              //solve here error
               if(true){
                 window.location.href="/api/user/login";
             }
@@ -165,3 +166,5 @@ class SignUp extends React.Component {
 }
 
 export default SignUp;
+
+

@@ -15,20 +15,19 @@ class SignUp extends React.Component {
     };
 
     handleFormSubmit = async e =>{
-        e.preventDefault();
-        const email = e.target.elements.email.value;
-        const firstName = e.target.elements.firstname.value;
-        const lastName = e.target.elements.lastname.value;
-        const password = e.target.elements.password.value;
-        const confirmedPassword = e.target.elements.confirm.value;
-        const userData ={
-            firstName,
-            lastName,
-            email,
-            password,
-            confirmedPassword
-        }
-
+      e.preventDefault();
+      const email = e.target.elements.email.value;
+      const firstName = e.target.elements.firstname.value;
+      const lastName = e.target.elements.lastname.value;
+      const password = e.target.elements.password.value;
+      const confirmedPassword = e.target.elements.confirm.value;
+      const userData ={
+          firstName,
+          lastName,
+          email,
+          password,
+          confirmedPassword
+      }
         if(this.isFormValid(userData)){
           this.setState({
             errors: []
@@ -45,10 +44,10 @@ class SignUp extends React.Component {
                       'Content-Type': 'Application/json'
                     }
                 }
-              //const body = JSON.stringify(newUser);
+              const body = JSON.stringify(newUser);
               const res = await newaxios.post('/api/user/signup', newUser, config);
               auth.setAuthToken(res.data.token);
-              if(false){
+              if(true){
                 window.location.href="/api/user/login";
             }
             

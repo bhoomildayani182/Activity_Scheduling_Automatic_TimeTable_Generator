@@ -1,8 +1,8 @@
 import React from "react";
 import {Route, Switch, NavLink, useRouteMatch} from "react-router-dom";
-import TextBox from './Textbox';
-import SignUp from './Signup';
-import Login from './Login';
+import TextBox from './textbox';
+import SignUp from './signup';
+import Login from './login';
 import '../styles/buttonbox.scss';
 import '../styles/user.scss';
 import Clock from '../assets/clock-illustration.png';

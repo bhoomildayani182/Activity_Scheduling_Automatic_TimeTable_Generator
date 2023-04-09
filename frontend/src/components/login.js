@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import newaxios from '../newaxios';
 import auth from '../utils/auth';
 import {Link} from 'react-router-dom';
 import '../styles/form.scss';
@@ -33,7 +33,7 @@ class Login extends React.Component {
                     }
                 }
                 const body = JSON.stringify(credentials);
-                const res = await axios.post('http://localhost:3000/api/user/login', body, config);
+                const res = await newaxios.post('/api/user/login', body, config);
                 auth.setAuthToken(res.data.token);
                 if(res.data.token){
                     window.location.href="/dashboard";
@@ -100,7 +100,7 @@ class Login extends React.Component {
               </Message>
             )}            
             <Message style={{marginTop: 30}}>
-                Don't have an account? <Link to="http://localhost:3000/user/signup" >Sign Up</Link>
+                Don't have an account? <Link to="/user/signup" >Sign Up</Link>
             </Message>
           </form>
         )

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
-import UserCredentials from "./User";
-import Dashboard from "./Dashboard";
+import UserCredentials from "./user";
+import Dashboard from "./dashboard";
 import HomePage from "./HomePage";
 import Footer from "./Footer";
 import PrivateRoute from './PrivateRoute';

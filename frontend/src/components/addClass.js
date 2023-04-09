@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import newaxios from '../newaxios';
 import auth from "../utils/auth";
 import "../styles/addform.scss";
 
@@ -32,7 +32,7 @@ class AddClass extends React.Component {
         },
       };
       const body = JSON.stringify(classDetails);
-      const res = await axios.post("http://localhost:3000/api/class", body, config);
+      const res = await newaxios.post("/api/class", body, config);
       console.log(res.data);
 
       e.target.elements.className.value = '';

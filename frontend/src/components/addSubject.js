@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import newaxios from '../newaxios';
 import auth from "../utils/auth";
 import "../styles/addform.scss";
 
@@ -33,7 +33,7 @@ class AddSubject extends React.Component {
         }
       }
       const body = JSON.stringify(subject);
-      const res = await axios.post('http://localhost:3000/api/subject', body, config);
+      const res = await newaxios.post('/api/subject', body, config);
       console.log(res);
 
       e.target.elements.subjectCode.value = '';

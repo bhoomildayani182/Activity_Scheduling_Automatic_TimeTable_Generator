@@ -4,7 +4,7 @@
   "description": "The goal of the software application is to provide a possible timetable solution with the minimum number of clashes between slots. It relieves the user of much of the hard work required for generating timetable manually, leaving him with more time to apply the skills and judgment where they are needed in order to produce a timetable of the highest quality.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    
     "dev": "nodemon app.js",
     "client": "cd ../frontend && npm install",
     "frontend": "cd ../frontend && npm run start",

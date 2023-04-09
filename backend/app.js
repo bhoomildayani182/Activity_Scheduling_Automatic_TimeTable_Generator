@@ -26,7 +26,7 @@ app.use(algoExecutionRouter);
 
 
 // PORT
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
   app.use(express.static(path.join(__dirname, '../' + "/frontend/build")));

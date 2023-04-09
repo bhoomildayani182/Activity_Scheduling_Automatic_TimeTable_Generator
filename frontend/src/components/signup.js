@@ -1,5 +1,6 @@
 import React from 'react';
-import axios from 'axios';
+
+import newaxios from '../newaxios';
 import auth from '../utils/auth'
 import '../styles/form.scss';
 import {Link} from "react-router-dom"
@@ -14,20 +15,19 @@ class SignUp extends React.Component {
     };
 
     handleFormSubmit = async e =>{
-        e.preventDefault();
-        const email = e.target.elements.email.value;
-        const firstName = e.target.elements.firstname.value;
-        const lastName = e.target.elements.lastname.value;
-        const password = e.target.elements.password.value;
-        const confirmedPassword = e.target.elements.confirm.value;
-        const userData ={
-            firstName,
-            lastName,
-            email,
-            password,
-            confirmedPassword
-        }
-
+      e.preventDefault();
+      const email = e.target.elements.email.value;
+      const firstName = e.target.elements.firstname.value;
+      const lastName = e.target.elements.lastname.value;
+      const password = e.target.elements.password.value;
+      const confirmedPassword = e.target.elements.confirm.value;
+      const userData ={
+          firstName,
+          lastName,
+          email,
+          password,
+          confirmedPassword
+      }
         if(this.isFormValid(userData)){
           this.setState({
             errors: []
@@ -44,11 +44,13 @@ class SignUp extends React.Component {
                       'Content-Type': 'Application/json'
                     }
                 }
-              //const body = JSON.stringify(newUser);
-              const res = await axios.post('http://localhost:3000/api/user/signup', newUser, config);
+
+              const body = JSON.stringify(newUser);
+              const res = await newaxios.post('/api/user/signup', newUser, config);
               auth.setAuthToken(res.data.token);
-              if(false){
-                window.location.href="http://localhost:3000/api/user/login";
+              //solve here error
+              if(true){
+                window.location.href="/api/user/login";
             }
             
           } catch(e){
@@ -156,7 +158,7 @@ class SignUp extends React.Component {
               </Message>
             )}
             <Message style={{marginTop: 30}}>
-                Already a user? <Link to="http://localhost:3000/user/login">Login</Link>
+                Already a user? <Link to="/user/login">Login</Link>
             </Message>
           </form>
 
@@ -165,3 +167,5 @@ class SignUp extends React.Component {
 }
 
 export default SignUp;
+
+

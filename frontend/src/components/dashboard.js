@@ -6,11 +6,11 @@ import {
   NavLink,
   useRouteMatch,
 } from "react-router-dom";
-import axios from "axios"
-import AddClass from "./AddClass";
-import AddSubject from "./AddSubject";
-import AddTeacher from "./AddTeacher";
-import AddSlots from "./AddSlots";
+import newaxios from "../newaxios"
+import AddClass from "./addClass";
+import AddSubject from "./addSubject";
+import AddTeacher from "./addTeacher";
+import AddSlots from "./addSlots";
 import ClassList from "./ClassList";
 import SubjectList from "./SubjectList";
 import TeacherList from "./TeacherList";
@@ -35,7 +35,7 @@ function Dashboard(props) {
         }
       }
       const body = JSON.stringify({});
-      const res = await axios.post('http://localhost:3000/api/user/logout',body, config);
+      const res = await newaxios.post('/api/user/logout',body, config);
       console.log(res);
       if(res.status === 200){
         auth.removeAuthToken(authToken);

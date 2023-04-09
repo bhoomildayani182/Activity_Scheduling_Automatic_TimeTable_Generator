@@ -1,6 +1,9 @@
 # Scheduly
   An automated Time-Table Generator.
 
+  ![image](https://user-images.githubusercontent.com/98962947/230787374-16865d31-57d9-482e-af7d-9252079e6653.png)
+
+
 ## Contributors
 - [Bhoomil Dayani](https://github.com/bhoomildayani182)
 - [Raj Busa](https://github.com/RajBusa)

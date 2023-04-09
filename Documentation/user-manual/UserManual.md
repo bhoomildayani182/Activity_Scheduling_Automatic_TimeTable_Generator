@@ -1,4 +1,4 @@
-# User Manual
+    # User Manual
 
 To use this project, a user should follow the following steps to gain the desired results.
 

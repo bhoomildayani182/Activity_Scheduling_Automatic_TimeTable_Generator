@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 //CONNECTING TO DATABASE
 mongoose
   .connect(
-    "mongodb://localhost:27017/TimeTablegenrator",
+    // "mongodb://localhost:27017/TimeTablegenrator",
+    "mongodb+srv://bhoomildayani182:Bhoomil@1234@timetablegenerator.xcza5kt.mongodb.net/test",
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
   )
   .then(() => {
@@ -12,5 +13,3 @@ mongoose
   .catch((err) => {
     console.error(`Error connecting to the database. \n${err}`);
   });
-
-  //mongodb://localhost:27017/

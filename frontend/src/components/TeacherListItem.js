@@ -12,7 +12,8 @@ function TeacherListItem(props) {
     <div className="teacher">
       <p className="teacher__details">
         {props.regNumber} | {props.firstName} {props.lastName} | Working Hours:{" "}
-        {props.workingHours} | Courses: {props.subjectName}
+        {props.workingHours} 
+        {/* | Courses: {props.subjectName} */}
       </p>
       <button
         onClick={handleRemoveTeacher}

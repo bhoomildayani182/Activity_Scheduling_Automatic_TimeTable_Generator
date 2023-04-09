@@ -44,12 +44,13 @@ class SignUp extends React.Component {
                       'Content-Type': 'Application/json'
                     }
                 }
-              const body = JSON.stringify(newUser);
-              const res = await axios.post('http://localhost:3000/api/user/signup', body, config);
+              //const body = JSON.stringify(newUser);
+              const res = await axios.post('http://localhost:3000/api/user/signup', newUser, config);
               auth.setAuthToken(res.data.token);
-              if(true){
-                window.location.href="http://localhost:3000/user/login";
+              if(false){
+                window.location.href="http://localhost:3000/api/user/login";
             }
+            
           } catch(e){
             console.log(e);
             let error={message: "Something went wrong. Try again!"};

@@ -22,7 +22,7 @@ class HomePage extends React.Component{
                 <section className="header">
                     <div className="home-nav">
                         <div className="home-row ">
-                            <h3 className="home-logo">TimeTable Genetaror</h3>
+                            <h3 className="home-logo">TimeTable Generator</h3>
                             <ul className="home-menu">
                                 <li className="home-menu__li"><a className="home-menu__link home-menu__link--simple" href="/user/login">Sign In</a></li>
                                 <li className="home-menu__li"><a className="home-menu__link home-menu__link--btn" href="/user/signup">Join</a></li>
@@ -33,7 +33,7 @@ class HomePage extends React.Component{
                         <div className="col">
                             <div className="textbox--home">
                                 <h2 className="textbox__preHeading--blue">Welcome to</h2><br/>
-                                <h5 className="home-logo">TimeTable Genetaror</h5><br/>
+                                <h5 className="home-logo">TimeTable Generator</h5><br/>
                                 <p>This app can be used to generate an automatically scheduled time table. Now get rid of all the manual labour of hit and trial method for generating time table</p>
                                 {/* <a href="./about" className="about-btn">About</a> */}
                             </div>

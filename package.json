@@ -4,10 +4,11 @@
   "description": "The goal of the software application is to provide a possible timetable solution with the minimum number of clashes between slots. It relieves the user of much of the hard work required for generating timetable manually, leaving him with more time to apply the skills and judgment where they are needed in order to produce a timetable of the highest quality.",
   "main": "app.js",
   "scripts": {
-    
-    "dev": "nodemon app.js",
-    "client": "cd ../frontend && npm install",
-    "frontend": "cd ../frontend && npm run start",
+    "start": "concurrently \"nodemon app.js\" \"npm run frontend\"",
+    "eject": "react-scripts eject",
+    "dev": "concurrently \"nodemon app.js\" \"npm run frontend\"",
+    "frontendinstall": "npm install --prefix frontend",
+    "frontend": "npm start --prefix frontend",
     "client-build": "cd ../frontend && npm run build",
     "heroku-postbuild": "npm run client && npm run client-build"
   },
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^3.5.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
